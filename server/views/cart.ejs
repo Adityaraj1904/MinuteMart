@@ -1,0 +1,42 @@
+<%- include('partials/header', { title: 'Your Cart' }) %>
+
+  <main class="container mt-5">
+    <h1 class="mb-4">Your Cart</h1>
+    <div class="row">
+      <div class="col-lg-8" id="cart-items-container">
+        <p>Loading your cart...</p>
+      </div>
+      <div class="col-lg-4">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Order Summary</h5>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item d-flex justify-content-between">
+                <span>Subtotal</span>
+                <span id="subtotal">₹0.00</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between">
+                <span>Delivery Fee</span>
+                <span id="delivery-fee">₹15.00</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between fw-bold h5">
+                <span>Total</span>
+                <span id="total">₹15.00</span>
+              </li>
+            </ul>
+            <div class="d-grid mt-3">
+              <a href="/checkout/address" class="btn btn-primary btn-lg">Proceed to Payment</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://js.stripe.com/v3/"></script>
+  <script>
+    const stripe = Stripe('<%= stripePublicKey %>');
+  </script>
+  <script src="/js/cart.js"></script>
+</body>
+</html>

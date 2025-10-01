@@ -1,0 +1,28 @@
+<%- include('partials/header', { title: 'Redirecting to Payment...' }) %>
+
+<main class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card redirect-card">
+                <div class="card-body">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <h3 class="mt-4">Redirecting to Secure Payment</h3>
+                    <p class="text-muted">You are being sent to our secure payment partner, Stripe. Please do not close this window.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- <%- include('partials/footer') %> -->
+
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+    const stripe = Stripe('<%= stripePublicKey %>');
+    stripe.redirectToCheckout({ sessionId: '<%= sessionId %>' });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<%- include('partials/header', { title: 'Order Successful' }) %>
+
+<main class="container mt-5 text-center">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card">
+                <div class="card-body p-5">
+                    <div class="text-success mb-3" style="font-size: 5rem;">
+                        <i class="bi bi-check-circle-fill"></i>
+                    </div>
+                    <h1 class="card-title">Thank You!</h1>
+                    <p class="lead">Your order has been placed successfully.</p>
+                    <hr>
+                    <p>You can view your order details in the "My Orders" section.</p>
+                    <div class="d-grid gap-2 mt-4">
+                        <a href="/shop" class="btn btn-primary btn-lg">Continue Shopping</a>
+                        <a href="/orders" class="btn btn-outline-secondary">View My Orders</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<%- include('partials/footer') %>
+
+</body>
+</html>

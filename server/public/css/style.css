@@ -1,0 +1,614 @@
+/* In public/css/style.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+  --primary-color: #6a0dad;  /* Zepto Purple */
+  --secondary-color: #f72585; /* Bright Pink for accents */
+  --dark-color: #2c003e;
+  --light-color: #f9f9f9; /* Off-white background */
+  --border-color: #e0e0e0;
+  --offer-bg: #28a745; /* Green for offer tags */
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--light-color);
+}
+
+.navbar {
+  background-color: var(--dark-color) !important;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  font-weight: 500;
+}
+.btn-primary:hover {
+  background-color: #560a8c;
+  border-color: #560a8c;
+}
+
+.card {
+  border: 1px solid var(--border-color);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  position: relative; /* Needed for the offer tag */
+  overflow: hidden; /* Needed for the offer tag */
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.card-img-top {
+  width: 100%;
+  height: 160px;
+  object-fit: contain;
+  padding: 10px;
+}
+
+.category-bar {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--border-color);
+}
+.category-bar::-webkit-scrollbar { display: none; }
+
+.category-item {
+  padding: 8px 20px;
+  margin-right: 10px;
+  border-radius: 20px;
+  background-color: #fff;
+  border: 1px solid var(--border-color);
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+.category-item:hover { background-color: #f0f0f0; }
+.category-item.active {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 600;
+  border-color: var(--primary-color);
+}
+
+/* --- NEW: Styles for Offer Tag --- */
+.offer-tag {
+  position: absolute;
+  top: 10px;
+  left: -35px;
+  background-color: var(--offer-bg);
+  color: white;
+  padding: 2px 30px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transform: rotate(-45deg);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+/* ------------------------------------------- */
+/* In public/css/style.css */
+
+/* --- Footer Styles --- */
+footer {
+  background-color: var(--dark-color);
+  color: #fff;
+}
+
+footer h4, footer h5, footer h6 {
+  color: #fff;
+  font-weight: 600;
+}
+
+footer h6 {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.popular-searches a {
+  color: #adb5bd;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.2s ease;
+}
+
+.popular-searches a:hover {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+.footer-links a {
+  color: #adb5bd;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+.footer-bottom {
+  background-color: #000;
+}
+
+/* Makes h5 invisible for layout purposes */
+.invisible {
+    visibility: hidden;
+}
+/* ----------------------------------------- */
+/* --- Authentication Pages --- */
+.auth-page {
+  background-color: var(--dark-color); /* Deep purple background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.auth-container {
+  display: flex;
+  background-color: #fff; /* White background for the form area */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  max-width: 900px; /* Adjust max-width as needed */
+  width: 100%;
+}
+
+.auth-form-card {
+  flex: 1; /* Takes up half the space */
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #333;
+}
+
+.auth-promo-card {
+  flex: 1; /* Takes up other half */
+  background-color: var(--primary-color); /* Purple promo side */
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+}
+
+.auth-logo {
+    color: var(--dark-color);
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+
+.auth-promo-card h3 {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+.app-store-btn {
+  height: 45px; /* Adjust size of app store buttons */
+  margin: 5px;
+  transition: transform 0.2s ease;
+}
+.app-store-btn:hover {
+  transform: translateY(-3px);
+}
+
+.auth-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+.auth-link:hover {
+    text-decoration: underline;
+    color: var(--secondary-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .auth-container {
+    flex-direction: column; /* Stack vertically on smaller screens */
+    max-width: 400px;
+  }
+  .auth-promo-card {
+    padding: 30px 20px;
+  }
+  .auth-form-card {
+    padding: 30px 20px;
+  }
+  .auth-promo-card h3 {
+    font-size: 1.2rem;
+  }
+}
+/* ------------------------------------- */
+/* In public/css/style.css */
+
+.promo-icon-area {
+    margin-bottom: 20px;
+}
+.promo-icon-area .bi {
+    color: rgba(255, 255, 255, 0.9); /* Slightly muted white for the icon */
+}
+.promo-icon-area p {
+    color: rgba(255, 255, 255, 0.8);
+}
+/* --------------------------------------- */
+/* In public/css/style.css */
+
+.promo-logo-img {
+  max-width: 120px; /* Adjust size as needed */
+  height: auto;
+  margin-bottom: 1rem;
+}
+/* ------------------------------------- */
+/* In public/css/style.css */
+
+/* --- Footer Social Icon Styles --- */
+.social-icons a {
+  font-size: 1.5rem; /* Makes icons bigger */
+  transition: color 0.2s ease-in-out;
+}
+
+.social-icons a:hover {
+  color: var(--secondary-color); /* Changes color to pink on hover */
+}
+/* --------------------------------------------- */
+/* ============================================ */
+
+
+/* In public/css/style.css */
+
+/* --- 1. Updated Color Palette & Background --- */
+:root {
+  --primary-purple: #6A1B9A;
+  --header-footer-bg: #2C003E; /* A deep, rich purple for header and footer */
+  --page-bg: #F0EAF6;          /* A very light, soft lavender for the page background */
+  --text-on-dark: #FFFFFF;     /* White text for dark backgrounds */
+  --text-on-light: #333333;   /* Dark text for light backgrounds */
+  --border-color: #DDDDDD;
+}
+
+body {
+  background-color: var(--page-bg); /* Applying the new page background color */
+  color: var(--text-on-light);
+  font-family: 'Poppins', sans-serif;
+}
+
+
+/* --- 2. Header (Navbar) Color --- */
+.navbar {
+  background-color: var(--header-footer-bg) !important; /* Applying the new header color */
+}
+/* Ensure navbar text is readable */
+.navbar .navbar-brand, .navbar .nav-link {
+    color: var(--text-on-dark) !important;
+}
+
+
+/* --- 3. Category Bar with Bold Underline --- */
+/* We target the container that holds the search and category bars */
+.sub-header {
+  position: sticky;
+  top: 56px; 
+  z-index: 999;
+  background-color: white;
+  padding-bottom: 0; /* Remove padding to make the underline sit flush */
+  
+  /* This adds the bold underline */
+  /* border-bottom: 4px solid var(--primary-purple);  */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.979);
+}
+
+
+
+/* In public/css/style.css */
+
+.category-bar {
+  /* This adds the bold, purple underline */
+  border-bottom: 1px solid #691b9a48;
+
+  /* This adds some space between the buttons and the new line */
+  padding-bottom: 1rem; 
+}
+
+
+
+.category-bar {
+    padding-top: 0.5rem;
+    padding-bottom: 1rem; /* Add space between buttons and the underline */
+}
+
+
+/* --- 4. Footer Color --- */
+footer {
+  background-color: var(--header-footer-bg); /* Applying the new footer color */
+  color: var(--text-on-dark); /* White text for the footer */
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+}
+/* Ensure footer headings and links are readable */
+footer h4, footer h5, footer a {
+    color: var(--text-on-dark);
+}
+footer a:hover {
+    color: #d1c4e9; /* A lighter purple for hover */
+}
+.footer-bottom {
+    background-color: #1a0024; /* A slightly darker shade for the bottom bar */
+}
+
+/* ----------------------------------------------- */
+
+
+/* =================================================== */
+/* ===   FINAL CODE FOR NEW FEATURES               === */
+/* =================================================== */
+
+/* ----- Zepto-Inspired Logo and Navbar Style ----- */
+
+.navbar {
+    background-color: #6A2B8D !important; /* Zepto's brand purple color */
+}
+
+.navbar-brand {
+    font-family: 'Montserrat', sans-serif; /* Use the new modern font */
+    font-weight: 700;
+    font-size: 1.8rem;
+    text-transform: lowercase; /* Makes text all lowercase like 'zepto' */
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand .bi {
+    font-size: 1.5rem;
+    margin-right: 8px; /* Space between icon and text */
+}
+
+/* ----- Promotional Banner Styles ----- */
+
+.promo-container {
+    padding: 0; /* Removing extra padding to let banner be full width */
+    margin-bottom: 30px; 
+}
+
+.hero-banner {
+    position: relative;
+    /* IMPORTANT: Make sure your image is at this path! */
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)), url('../images/promo-banner.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+    overflow: hidden;
+}
+
+.banner-content {
+    color: #ffffff;
+    max-width: 500px;
+}
+
+.banner-content h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.banner-content p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    background-color: #ffffff;
+    color: #6A2B8D; /* Purple text to match navbar */
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #f0f0f0;
+}
+/* --------------------------------------------------- */
+/* Adjustments for banner image */
+.hero-banner {
+    /* Keep existing styles */
+    /* Remove the background-image from here as we're adding a separate image */
+    background-image: linear-gradient(to right, #6A2B8D, #8A2BE2); /* Use a solid or gradient background */
+    position: relative; /* Ensure proper positioning of child elements */
+    overflow: hidden; /* Important for keeping image within rounded corners */
+}
+
+.banner-image {
+    position: absolute; /* Position relative to .hero-banner */
+    right: 0px; /* Adjust as needed */
+    bottom: 0px; /* Adjust as needed */
+    height: 100%; /* Make image fill vertical space */
+    width: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the image fits without cropping */
+    max-width: 40%; /* Prevent image from taking up too much horizontal space */
+    z-index: 1; /* Ensure it's above other elements if necessary */
+}
+
+/* Optional: Adjust banner-content max-width if image overlaps text */
+.banner-content {
+    max-width: 50%; /* Adjust if the image is too wide */
+    z-index: 2; /* Ensure text is above image */
+}
+/* ------------------------------------------------- */
+
+
+/* -- Footer Link Styling -- */
+.popular-searches a {
+    color: #adb5bd; /* A light grey color */
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.popular-searches a:hover {
+    color: #ffffff; /* White on hover */
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    background-color: rgba(0, 0, 0, 0.2); /* A slightly darker shade for the bottom bar */
+}
+
+/* -- Deals of the Week Slider Styling -- */
+.slider-section {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+
+/* ------------------------------------------- */
+
+/* -- Custom Carousel Control Button Styling -- */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 48px;              /* Fixed width for the button */
+    height: 48px;             /* Fixed height for the button */
+    background-color: #6c757d; /* Dark grey background for the button */
+    border-radius: 50%;       /* Makes it a perfect circle */
+    border: 2px solid #ffffff; /* White border */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2); /* Soft shadow */
+    opacity: 0.8;             /* Slightly transparent */
+    transition: all 0.2s ease-in-out; /* Smooth transition for hover effects */
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background-color: #5a6268; /* Slightly darker grey on hover */
+    opacity: 1;                /* Fully opaque on hover */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3); /* More pronounced shadow on hover */
+}
+
+/* Position the icons correctly within the new circular button */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 1.5rem; /* Adjust icon size if needed */
+    height: 1.5rem; /* Adjust icon size if needed */
+    background-size: 100% 100%; /* Ensure SVG icon scales to button size */
+}
+
+/* Ensure the arrows themselves are white or a contrasting color */
+.carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e");
+}
+
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+/* ----------------------------------- */
+
+/* ===================================== */
+/* === Attractive Deals Section Styling === */
+/* ===================================== */
+
+/* 1. Add a subtle gradient to the container */
+.slider-section {
+  background: linear-gradient(135deg, #f8f9fa, #ffffff); /* Subtle light grey to white gradient */
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+  border: 1px solid #f0f0f0;
+}
+
+/* 2. Style the main heading */
+.deals-heading {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 2.2rem; /* A bit larger */
+  text-transform: uppercase; /* Makes text ALL CAPS */
+  letter-spacing: 2px; /* Adds space between letters */
+
+  /* 3. The Gradient Text Effect */
+  background: linear-gradient(90deg, #8A2BE2, #6A2B8D); /* Purple gradient from your theme */
+  -webkit-background-clip: text; /* Clips the background to the text shape */
+  background-clip: text;
+  color: transparent; /* Makes the text color transparent to show the background */
+}
+
+
+/* -- Custom Carousel Control Button Styling -- */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 48px;
+    height: 48px;
+    background-color: #6c757d;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    opacity: 0.8;
+    transition: all 0.2s ease-in-out;
+
+    /* === NEW LINES FOR CENTERING === */
+    top: 50%; /* Moves the button's top edge to the middle */
+    transform: translateY(-50%); /* Pulls it up by half its own height to perfectly center it */
+}
+
+/* NEW: Horizontal positioning for a modern look */
+.carousel-control-prev {
+    left: -24px; /* Moves the left button halfway outside the container */
+}
+.carousel-control-next {
+    right: -24px; /* Moves the right button halfway outside the container */
+}
+
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background-color: #5a6268;
+    opacity: 1;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* Position the icons correctly within the new circular button */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-size: 100% 100%;
+}
+
+/* Ensure the arrows themselves are white */
+.carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e");
+}
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+/* --------------------------------------- */
+
+/* -- Stripe Redirect Page Styling -- */
+.redirect-card {
+    text-align: center;
+    padding: 2rem;
+}
+
+.redirect-card .spinner-border {
+    width: 3rem;   /* Makes the spinner larger */
+    height: 3rem;  /* Makes the spinner larger */
+    border-width: .35em; /* Makes the spinner thicker */
+}

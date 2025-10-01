@@ -1,0 +1,47 @@
+<%- include('partials/header', { title: 'Shipping Address' }) %>
+
+  <main class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-lg-6">
+        <div class="card shadow-sm">
+          <div class="card-body p-4">
+            <h2 class="card-title text-center mb-4">Shipping Address</h2>
+            
+            <form action="/checkout/address" method="POST">
+              <div class="mb-3">
+                <label for="street" class="form-label">Street Address</label>
+                <input type="text" class="form-control" id="street" name="street" value="<%= user.address ? user.address.street : '' %>" required>
+              </div>
+              <div class="mb-3">
+                <label for="city" class="form-label">City</label>
+                <input type="text" class="form-control" id="city" name="city" value="<%= user.address ? user.address.city : '' %>" required>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="state" class="form-label">State</label>
+                  <input type="text" class="form-control" id="state" name="state" value="<%= user.address ? user.address.state : '' %>" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="zip" class="form-label">ZIP Code</label>
+                  <input type="text" class="form-control" id="zip" name="zip" value="<%= user.address ? user.address.zip : '' %>" required>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="phone" class="form-label">Phone Number</label>
+                <input type="tel" class="form-control" id="phone" name="phone" value="<%= user.address ? user.address.phone : '' %>" required>
+              </div>
+
+              <div class="d-grid mt-4">
+                <button type="submit" class="btn btn-primary btn-lg">Save and Proceed to Payment</button>
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <script src="/js/cart-count.js"></script>
+</body>
+</html>
